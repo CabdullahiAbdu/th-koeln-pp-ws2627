@@ -20,7 +20,7 @@ public class Pseudo_Zufallszahlen
     
     public void berechneZufallszahl()
     {
-        for(int i = 0; i < 100; i++)
+        for(int i = 0; i <= this.m+1; i++)
         {
             int zf = (int) ((((long)this.a * this.z) + this.b) % this.m);
             this.z = zf;
