@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Java Kompilate & Bytecode
+*.class
+bin/
+out/
+target/
+
+# VS Code / IDE Projektdateien
+.vscode/
+.settings/
+.classpath
+.project
