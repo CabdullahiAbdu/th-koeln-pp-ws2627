@@ -1,8 +1,8 @@
 package versuch_eins;
 
 public class Flags_Calculator {
-    short flags;
-    byte k;
+    private short flags;
+    private byte k;
 
     public Flags_Calculator(short flags, byte k) {
         this.flags = flags;
@@ -14,14 +14,13 @@ public class Flags_Calculator {
         return b;
     }
 
-    public static void main(String[] args)
-    {
-        
-        Flags_Calculator fc = new Flags_Calculator((short)29204,(byte)2);
-        int state = fc.calculatePos();
-        System.out.println("The State of the: "+ fc.k + " Bit is:" + state);
+    public static void main(String[] args) {
 
-        String lampState = (state == 1) ? "Lamp is on"  : "Lamp is off";
+        Flags_Calculator fc = new Flags_Calculator((short) 29204, (byte) 2);
+        int b = fc.calculatePos();
+        System.out.println("The State of the: " + fc.k + " Bit is:" + b);
+
+        String lampState = (b == 1) ? "Lamp is on" : "Lamp is off";
         System.out.println("The State of the bit:" + lampState);
-    }    
+    }
 }

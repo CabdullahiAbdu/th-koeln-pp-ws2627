@@ -4,16 +4,16 @@ import java.util.Scanner;
 
 public class chain_of_chars {
 
-    String s1;
-    String s2;
-    String s3;
+    private String s1;
+    private String s2;
+    private String s3;
 
     public chain_of_chars(String s1, String s2) {
         this.s1 = s1;
         this.s2 = s2;
     }
 
-    public void concat() {
+    private void concat() {
         s3 = s1 + (char) 32 + s2;
     }
 
@@ -27,7 +27,8 @@ public class chain_of_chars {
             System.out.println(coc.s3);
         }
     }
-    //Sub Methods
+
+    // Sub Methods
     private static String readValidString(Scanner scanner, String outputPrompt) {
         while (true) {
             System.out.println(outputPrompt);
