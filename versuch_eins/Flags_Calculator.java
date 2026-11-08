@@ -9,7 +9,7 @@ public class Flags_Calculator {
         this.k = k;
     }
 
-    private int calculatePos() {
+    public int calculatePos() {
         int b = (flags >> k) & 1;
         return b;
     }

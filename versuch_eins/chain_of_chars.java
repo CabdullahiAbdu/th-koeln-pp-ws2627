@@ -13,7 +13,7 @@ public class chain_of_chars {
         this.s2 = s2;
     }
 
-    private void concat() {
+    public void concat() {
         s3 = s1 + (char) 32 + s2;
     }
 

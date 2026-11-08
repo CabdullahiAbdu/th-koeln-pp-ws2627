@@ -9,7 +9,7 @@ public class Ascii_Ceasar {
         this.c = c;
     }
 
-    private char ceasarMove() {
+    public char ceasarMove() {
         char shiftedChar = (char) (((c - 'A' + 2) % 26) + 'A');
         return shiftedChar;
     }

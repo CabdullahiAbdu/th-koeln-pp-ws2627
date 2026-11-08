@@ -17,7 +17,7 @@ public class Calculate_hash {
         this.m = m;
     }
 
-    private int createHashValue() {
+    public int createHashValue() {
         int charValue = this.c1 + this.c2 + this.c3 + this.c4;
         int hash = charValue % this.m;
         return hash;

@@ -16,7 +16,7 @@ public class Pseudo_Rand_numbers {
         this.m = m;
     }
 
-    private void calculateRandomNummber() {
+    public void calculateRandomNummber() {
         // m + 2 runs so you can see when the sequence starts repeating
         for (int i = 0; i <= this.m + 1; i++) {
             int zf = Math.floorMod(((long) this.a * this.z) + this.b, this.m);
