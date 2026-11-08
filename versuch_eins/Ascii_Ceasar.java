@@ -1,15 +1,14 @@
 package versuch_eins;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Ascii_Ceasar 
 {
-    final char c;
+    char c;
 
-    public Ascii_Ceasar(char C)
+    public Ascii_Ceasar(char c)
     {
-        this.c = C;
+        this.c = c;
     }
 
     private char ceasarMove()
@@ -18,52 +17,28 @@ public class Ascii_Ceasar
         return shiftedChar;
     }
 
-
     public static void main(String[] args)
     {
-        java.util.Scanner scanner = new java.util.Scanner(System.in);
-        char tInput = readValidString(scanner, "Please type in your Uppercase Character");
-        Ascii_Ceasar ac = new Ascii_Ceasar(tInput);
-        System.out.println("The Letter 2 steps after " + tInput + " is " + ac.ceasarMove());
-
-
+        try (Scanner scanner = new Scanner(System.in)) {
+            char tInput = readValidCharacter(scanner, "Please type in your Uppercase Character");
+            Ascii_Ceasar ac = new Ascii_Ceasar(tInput);
+            System.out.println("The Letter 2 steps after " + tInput + " is " + ac.ceasarMove());
+        }
     }
 
-    private static char readValidString (Scanner sc, String outputPrompt )
+    //Sub Methods
+    private static char readValidCharacter(Scanner scanner, String outputPrompt)
     {
         while(true)
         {
-            try
-            {
-                System.out.println(outputPrompt);
-                String input = sc.nextLine();
+            System.out.println(outputPrompt);
+            String input = scanner.nextLine();
 
-                if(input.length() == 1)
-                {
-                    char c = input.charAt(0);
-                    if(c >= 'A' && c <= 'Z')
-                    {
-                    return c;
-                    }
-                }
-                
-                if(input.length() != 1)
-                {
-                    throw new IllegalArgumentException("Input is too long. Should be One Character");
-                }
-                else
-                {
-                    throw new InputMismatchException("Input is not Uppercase");
-                }
+            if (input.matches("[A-Z]")) {
+                return input.charAt(0);
             }
-            catch (IllegalArgumentException e) 
-            {
-                System.out.println("Error: The Input needs be an Uppercase Character");
-            } 
-            catch (java.util.InputMismatchException e) 
-            {
-                System.out.println("Error: Restricted Characters.");
-            }
+
+            System.out.println("Error: The input needs to be an uppercase character.");
         }
     }
 

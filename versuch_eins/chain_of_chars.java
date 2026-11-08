@@ -8,9 +8,9 @@ public class chain_of_chars {
     String s2;
     String s3;
 
-    public chain_of_chars(String x1, String y2) {
-        this.s1 = x1;
-        this.s2 = y2;
+    public chain_of_chars(String s1, String s2) {
+        this.s1 = s1;
+        this.s2 = s2;
     }
 
     public void concat() {
@@ -27,21 +27,17 @@ public class chain_of_chars {
             System.out.println(coc.s3);
         }
     }
-
+    //Sub Methods
     private static String readValidString(Scanner scanner, String outputPrompt) {
         while (true) {
-            try {
-                System.out.println(outputPrompt);
-                String word = scanner.nextLine();
+            System.out.println(outputPrompt);
+            String word = scanner.nextLine();
 
-                if (word.isEmpty() || !word.matches("^[a-zA-ZäöüÄÖÜß]+$")) {
-                    throw new IllegalArgumentException();
-                }
-
+            if (word.matches("[a-zA-ZäöüÄÖÜß]+")) {
                 return word;
-            } catch (IllegalArgumentException e) {
-                System.out.println("Error: Restricted Characters or empty input. Try again.");
             }
+
+            System.out.println("Error: Restricted Characters or empty input. Try again.");
         }
     }
 }
